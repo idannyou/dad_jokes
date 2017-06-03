@@ -1,7 +1,7 @@
 import {
         RECEIVE_JOKES,
         RECEIVE_JOKE
-      } from '../actions/joke_action';
+      } from '../actions/joke_actions';
 
 import {merge} from 'lodash';
 
@@ -21,7 +21,7 @@ const jokesReducer = (state = {}, action) => {
     default:
       return state;
   }
-  
+
 };
 
 export default jokesReducer;
