@@ -1,16 +1,27 @@
-import RECEIVE_JOKES from '../actions/joke_action';
-import RECEIVE_JOKE from '../actions/joke_action';
+import {
+        RECEIVE_JOKES,
+        RECEIVE_JOKE
+      } from '../actions/joke_action';
+
+import {merge} from 'lodash';
 
 const jokesReducer = (state = {}, action) => {
-  Object.freeze(state)
+
+  Object.freeze(state);
+  const newState = merge({}, state);
+
   switch (action.type) {
     case RECEIVE_JOKES:
-      return {};
+      return {
+        jokes: action.jokes
+      };
     case RECEIVE_JOKE:
-      return {};
+      newState.jokes[action.joke.id] = action.joke;
+      return newState;
     default:
       return state;
   }
+  
 };
 
 export default jokesReducer;
