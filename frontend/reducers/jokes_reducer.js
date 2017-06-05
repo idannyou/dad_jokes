@@ -5,7 +5,23 @@ import {
 
 import {merge} from 'lodash';
 
-const jokesReducer = (state = {}, action) => {
+// initialState to test front end
+const initialState = {
+  1: {
+    id: 1,
+    joke: "What is XYZ?",
+    answer: "ABC",
+    funny: false
+  },
+  2: {
+    id: 2,
+    joke: "What bee gives milk?",
+    answer: "boo bees",
+    funny: true
+  },
+};
+
+const jokesReducer = (state = initialState, action) => {
 
   Object.freeze(state);
   const newState = merge({}, state);
