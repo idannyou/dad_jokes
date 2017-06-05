@@ -8,9 +8,10 @@ export const receiveJokes = (jokes) => (
   }
 );
 
-export const receiveJoke = (joke) => (
-  {
+export const receiveJoke = (joke) => {
+  return {
     type: RECEIVE_JOKE,
     joke
-  }
-);
+  };
+
+};

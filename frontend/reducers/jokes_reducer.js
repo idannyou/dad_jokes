@@ -22,7 +22,6 @@ const initialState = {
 };
 
 const jokesReducer = (state = initialState, action) => {
-
   Object.freeze(state);
   const newState = merge({}, state);
   switch (action.type) {
