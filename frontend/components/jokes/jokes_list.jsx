@@ -26,6 +26,11 @@ class JokesListItem extends React.Component{
           >
           {this.state.display}
         </h2>
+        <h3
+          onClick = {() => this.props.removeJoke(this.props.joke.id)}
+          >
+          Delete
+        </h3>
       </li>
     );
   }

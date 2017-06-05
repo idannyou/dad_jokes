@@ -15,6 +15,7 @@ class Jokes extends React.Component {
               <JokesListItem
                 key = {joke.id}
                 joke = {joke}
+                removeJoke = {this.props.removeJoke}
                 />
             ))
           }
