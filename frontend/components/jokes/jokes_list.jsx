@@ -7,6 +7,7 @@ class JokesListItem extends React.Component{
       display: this.props.joke.joke
     };
     this.toggleDisplay = this.toggleDisplay.bind(this);
+    this.toggleFunny = this.toggleFunny.bind(this);
   }
 
   toggleDisplay(){
@@ -15,6 +16,11 @@ class JokesListItem extends React.Component{
       this.setState({
         display: display
       });
+  }
+
+  toggleFunny(){
+    const joke = Object.assign({}, this.props.joke, {funny: !this.props.joke.funny});
+    this.props.receiveJoke(joke);
   }
 
 
@@ -30,6 +36,11 @@ class JokesListItem extends React.Component{
           onClick = {() => this.props.removeJoke(this.props.joke.id)}
           >
           Delete
+        </h3>
+        <h3
+          onClick = {this.toggleFunny}
+          >
+          {(this.props.joke.funny)? 'Funny':'Not Funny'}
         </h3>
       </li>
     );
