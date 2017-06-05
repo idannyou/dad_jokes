@@ -4,13 +4,13 @@ export const RECEIVE_JOKE = "RECEIVE_JOKE";
 export const receiveJokes = (jokes) => (
   {
     type: RECEIVE_JOKES,
-    jokes: jokes
+    jokes
   }
 );
 
-const receiveJoke = (joke) => (
+export const receiveJoke = (joke) => (
   {
     type: RECEIVE_JOKE,
-    joke: joke
+    joke
   }
 );

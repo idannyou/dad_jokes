@@ -25,14 +25,11 @@ const jokesReducer = (state = initialState, action) => {
 
   Object.freeze(state);
   const newState = merge({}, state);
-
   switch (action.type) {
     case RECEIVE_JOKES:
-      return {
-        jokes: action.jokes
-      };
+      return action.jokes;
     case RECEIVE_JOKE:
-      newState.jokes[action.joke.id] = action.joke;
+      newState[action.joke.id] = action.joke;
       return newState;
     default:
       return state;
