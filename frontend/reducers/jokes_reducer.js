@@ -1,6 +1,7 @@
 import {
         RECEIVE_JOKES,
-        RECEIVE_JOKE
+        RECEIVE_JOKE,
+        REMOVE_JOKE
       } from '../actions/joke_actions';
 
 import {merge} from 'lodash';
@@ -29,6 +30,9 @@ const jokesReducer = (state = initialState, action) => {
       return action.jokes;
     case RECEIVE_JOKE:
       newState[action.joke.id] = action.joke;
+      return newState;
+    case REMOVE_JOKE:
+      delete newState[action.id];
       return newState;
     default:
       return state;
