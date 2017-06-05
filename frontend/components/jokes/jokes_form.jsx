@@ -32,13 +32,14 @@ class JokesForm extends React.Component{
 
   handleSubmit(){
     let id = this.uniqueId();
+    const joke = Object.assign({}, this.state, {id: id});
+    this.props.receiveJoke(joke);
     this.setState(
       {
-        id: id
-      },
-      () => this.props.receiveJoke(this.state)
+        joke: '',
+        answer: ''
+      }
     );
-
   }
 
 
@@ -48,12 +49,14 @@ class JokesForm extends React.Component{
       <div>
         <input
           type = 'text'
-          placeholder = {(this.state.joke === '')? 'Type in Joke': this.state.joke}
+          placeholder = 'Type in Joke'
+          value = {this.state.joke}
           onChange = {(e) => this.update('joke', e)}
           />
         <input
           type = 'text'
-          placeholder = {(this.state.answer === '')? 'Type in Answer': this.state.answer}
+          placeholder = 'Type in Answer'
+          value = {this.state.answer}
           onChange = {(e) => this.update('answer', e)}
           />
         <input
