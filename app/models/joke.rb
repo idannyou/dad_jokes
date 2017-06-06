@@ -13,7 +13,7 @@
 class Joke < ApplicationRecord
 
   validates :joke, :answer, presence: true
-  validates :funny, inclusion: {in :[true, false]}
+  validates :funny, inclusion: {in:[true, false]}
 
 
 end
