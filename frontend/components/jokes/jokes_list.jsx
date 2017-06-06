@@ -26,19 +26,22 @@ class JokesListItem extends React.Component{
 
   render(){
     return(
-      <li>
+      <li className='joke-container'>
         <h2
           onClick = {this.toggleDisplay}
+          className='joke'
           >
           {this.state.display}
         </h2>
         <h3
           onClick = {() => this.props.removeJoke(this.props.joke.id)}
+          className='joke-delete'
           >
           Delete
         </h3>
         <h3
           onClick = {this.toggleFunny}
+          className='joke-toggle'
           >
           {(this.props.joke.funny)? 'Funny':'Not Funny'}
         </h3>

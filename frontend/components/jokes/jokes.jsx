@@ -4,11 +4,11 @@ import JokesForm from './jokes_form';
 
 
 class Jokes extends React.Component {
-  
+
   render(){
     const jokes = this.props.jokes;
     return (
-      <div>
+      <div className= 'jokes-container'>
         <JokesForm
           receiveJoke = {this.props.receiveJoke}
           />
