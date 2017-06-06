@@ -14,6 +14,7 @@
 
 .joke-container{
   display: flex;
+  align-items: center;
 }
 
 .joke{
@@ -27,11 +28,16 @@
   cursor: pointer;
 }
 
+.joke:hover{
+  border: 1px solid yellow;
+}
+
 .joke-delete, .joke-toggle {
   border: 1px solid red;
   border-radius: 5px;
   width: 100px;
   height: 25px;
+  line-height: 25px;
   cursor: pointer;
   margin: 10px;
   padding: 5px;
@@ -39,4 +45,19 @@
 
 .joke-delete:hover, .joke-toggle:hover {
   border: 1px solid green;
+}
+
+.jokeform-container{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jokeform-joke{
+  margin: 10px;
+}
+
+.jokeform-answer{
+  margin: 10px;
 }
