@@ -13,3 +13,4 @@ j2 = Joke.create(joke: 'How many tickles does it take to make an octopus laugh?'
 j3 = Joke.create(joke: 'What do you call a fake noodle?', answer: 'An Impasta', funny: 'true')
 j4 = Joke.create(joke: 'What do you call an alligator in a vest?', answer: 'An Investigator', funny: 'false')
 j5 = Joke.create(joke: 'Did you hear about the hungry clock?', answer: 'It went back four seconds!', funny: 'false')
+j6 = Joke.create(joke: 'Why did the cow pack her bags?', answer: 'Because she had to mooooooo!', funny: 'true')

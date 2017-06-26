@@ -1,7 +1,8 @@
 class Api::JokesController < ApplicationController
 
   def index
-    render json: Joke.all
+    @jokes = Joke.all
+    render json: @jokes
   end
 
   def show
