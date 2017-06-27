@@ -30,7 +30,8 @@ class JokesForm extends React.Component{
   //   return event => this.setState({[field]: event.target.value});
   // }
 
-  handleSubmit(){
+  handleSubmit(event){
+    event.preventDefault();
     let id = this.uniqueId();
     const joke = Object.assign({}, this.state, {id: id});
     this.props.receiveJoke(joke);
@@ -47,6 +48,7 @@ class JokesForm extends React.Component{
   render(){
     return(
       <div className='jokeform-container'>
+        <form onSubmit={this.handleSubmit}>
           <input
             className = 'jokeform-joke'
             type = 'text'
@@ -65,10 +67,11 @@ class JokesForm extends React.Component{
             />
           <input
             className = 'jokeform-submit'
-            type = 'button'
+            type = 'submit'
             value = 'Create Joke'
-            onClick = {this.handleSubmit}
             />
+
+        </form>
       </div>
     );
 
