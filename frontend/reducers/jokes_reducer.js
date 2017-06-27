@@ -31,6 +31,7 @@ const jokesReducer = (state = initialState, action) => {
     case RECEIVE_JOKE:
       newState[action.joke.id] = action.joke;
       return newState;
+
     case REMOVE_JOKE:
       delete newState[action.id];
       return newState;

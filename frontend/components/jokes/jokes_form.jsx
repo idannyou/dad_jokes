@@ -47,7 +47,6 @@ class JokesForm extends React.Component{
   render(){
     return(
       <div className='jokeform-container'>
-        <form onSubmit={this.handleSubmit}>
           <input
             className = 'jokeform-joke'
             type = 'text'
@@ -66,10 +65,10 @@ class JokesForm extends React.Component{
             />
           <input
             className = 'jokeform-submit'
-            type = 'submit'
+            type = 'button'
             value = 'Create Joke'
+            onClick = {this.handleSubmit}
             />
-        </form>
       </div>
     );
 
