@@ -10,8 +10,25 @@ class JokesForm extends React.Component{
       answer: '',
       funny: false
     };
-    this.update = this.update.bind(this);
+
+
+    // // need babel plug in for the update function to work
+    // // outside the constructor
+    // this.handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   let id = this.uniqueId();
+    //   const joke = Object.assign({}, this.state, {id: id});
+    //   this.props.receiveJoke(joke);
+    //   this.setState(
+    //     {
+    //       joke: '',
+    //       answer: ''
+    //     }
+    //   );
+    // };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   // create uniqueId for form testing
@@ -20,15 +37,12 @@ class JokesForm extends React.Component{
   }
   //
 
-  update(field, event){
-    event.preventDefault();
-    this.setState({[field]: event.target.value});
+  update(field){
+    return (event) => {
+      event.preventDefault();
+      this.setState({[field]: event.target.value});
+    };
   }
-
-  // can write update by returning event without event being input
-  // update(field){
-  //   return event => this.setState({[field]: event.target.value});
-  // }
 
   handleSubmit(event){
     event.preventDefault();
@@ -54,7 +68,7 @@ class JokesForm extends React.Component{
             type = 'text'
             placeholder = 'Type in Joke'
             value = {this.state.joke}
-            onChange = {(e) => this.update('joke', e)}
+            onChange = {this.update('joke')}
             required
             />
           <input
@@ -62,7 +76,7 @@ class JokesForm extends React.Component{
             type = 'text'
             placeholder = 'Type in Answer'
             value = {this.state.answer}
-            onChange = {(e) => this.update('answer', e)}
+            onChange = {this.update('answer')}
             required
             />
           <input
