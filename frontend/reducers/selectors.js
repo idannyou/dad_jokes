@@ -1,3 +1,4 @@
-export const allJokes = (state) => (
-  Object.keys(state.jokes).map((id) => state.jokes[id])
-);
+export const allJokes = (state) => {
+  debugger
+  return Object.keys(state.jokes).map((id) => state.jokes[id]);
+};

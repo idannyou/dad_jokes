@@ -47,26 +47,29 @@ class JokesForm extends React.Component{
   render(){
     return(
       <div className='jokeform-container'>
-        <input
-          className = 'jokeform-joke'
-          type = 'text'
-          placeholder = 'Type in Joke'
-          value = {this.state.joke}
-          onChange = {(e) => this.update('joke', e)}
-          />
-        <input
-          className = 'jokeform-answer'
-          type = 'text'
-          placeholder = 'Type in Answer'
-          value = {this.state.answer}
-          onChange = {(e) => this.update('answer', e)}
-          />
-        <input
-          className = 'jokeform-submit'
-          type = 'button'
-          value = 'Create Joke'
-          onClick = {this.handleSubmit}
-          />
+        <form onSubmit={this.handleSubmit}>
+          <input
+            className = 'jokeform-joke'
+            type = 'text'
+            placeholder = 'Type in Joke'
+            value = {this.state.joke}
+            onChange = {(e) => this.update('joke', e)}
+            required
+            />
+          <input
+            className = 'jokeform-answer'
+            type = 'text'
+            placeholder = 'Type in Answer'
+            value = {this.state.answer}
+            onChange = {(e) => this.update('answer', e)}
+            required
+            />
+          <input
+            className = 'jokeform-submit'
+            type = 'submit'
+            value = 'Create Joke'
+            />
+        </form>
       </div>
     );
 
