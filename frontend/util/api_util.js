@@ -1,5 +1,6 @@
+
 export const fetchJokes = () => {
-  fetch('/api/jokes').then(
-    (blob) => console.log(blob)
+  return fetch('/api/jokes').then(
+    (response) => response.json()
   );
 };

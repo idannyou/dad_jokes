@@ -4,7 +4,8 @@ import {allJokes} from '../../reducers/selectors.js';
 import {
   receiveJokes,
   receiveJoke,
-  removeJoke
+  removeJoke,
+  fetchJokes
 } from '../../actions/joke_actions';
 
 const mapStateToProps = state => ({
@@ -14,7 +15,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   receiveJokes: () => dispatch(receiveJokes()),
   receiveJoke: (joke) => dispatch(receiveJoke(joke)),
-  removeJoke: (id) => dispatch(removeJoke(id))
+  removeJoke: (id) => dispatch(removeJoke(id)),
+  fetchJokes: () => dispatch(fetchJokes())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jokes);

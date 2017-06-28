@@ -5,6 +5,10 @@ import JokesForm from './jokes_form';
 
 class Jokes extends React.Component {
 
+  componentDidMount(){
+    this.props.fetchJokes();
+  }
+
   render(){
     const jokes = this.props.jokes;
     return (

@@ -5,10 +5,11 @@ import Root from './components/root';
 
 // // testing imports
 // import {allJokes} from './reducers/selectors';
-// import {
-//   receiveJokes,
-//   receiveJoke
-// } from './actions/joke_actions'
+import {
+  receiveJokes,
+  receiveJoke,
+  fetchJokes
+} from './actions/joke_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   // To test store
