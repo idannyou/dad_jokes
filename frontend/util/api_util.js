@@ -15,6 +15,7 @@ export const createJoke = (joke) => {
     method: "POST",
     body: JSON.stringify({joke})
   }).then(
-    response => console.log(response.json())
+    response => response.json()
   );
+  
 };

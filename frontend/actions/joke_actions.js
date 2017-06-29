@@ -33,3 +33,9 @@ export const fetchJokes = () => (dispatch) => {
     (jokes) => dispatch(receiveJokes(jokes))
   );
 };
+
+export const createJoke = (joke) => dispatch => {
+  return ApiUtil.createJoke(joke).then(
+    (joke) => dispatch(receiveJoke(joke))
+  );
+};

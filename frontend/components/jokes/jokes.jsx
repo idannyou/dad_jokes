@@ -15,6 +15,7 @@ class Jokes extends React.Component {
       <div className= 'jokes-container'>
         <JokesForm
           receiveJoke = {this.props.receiveJoke}
+          createJoke = {this.props.createJoke}
           />
         <ul>
           {

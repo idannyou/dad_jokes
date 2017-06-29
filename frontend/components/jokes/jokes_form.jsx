@@ -5,7 +5,6 @@ class JokesForm extends React.Component{
   constructor(){
     super();
     this.state = {
-      id: -1,
       joke: '',
       answer: '',
       funny: false
@@ -31,11 +30,11 @@ class JokesForm extends React.Component{
 
   }
 
-  // create uniqueId for form testing
-  uniqueId() {
-    return new Date().getTime();
-  }
-  //
+  // // create uniqueId for form testing
+  // uniqueId() {
+  //   return new Date().getTime();
+  // }
+  // //
 
   update(field){
     return (event) => {
@@ -46,9 +45,10 @@ class JokesForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    let id = this.uniqueId();
-    const joke = Object.assign({}, this.state, {id: id});
-    this.props.receiveJoke(joke);
+    // let id = this.uniqueId();
+    // const joke = Object.assign({}, this.state, {id: id});
+    // this.props.receiveJoke(joke);
+    this.props.createJoke(this.state);
     this.setState(
       {
         joke: '',
