@@ -37,7 +37,7 @@ class Api::JokesController < ApplicationController
   private
 
   def joke_params
-    params.require(:joke).permit(:joke, :answer, funny: false)
+    params.require(:joke).permit(:joke, :answer, :funny)
   end
 
 end
