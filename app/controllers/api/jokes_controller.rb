@@ -10,6 +10,7 @@ class Api::JokesController < ApplicationController
 
   def create
     @joke = Joke.new(joke_params)
+    debugger
     if @joke.save
       render json: @joke
     else
