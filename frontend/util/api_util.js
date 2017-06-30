@@ -17,5 +17,15 @@ export const createJoke = (joke) => {
   }).then(
     response => response.json()
   );
-  
+
+};
+
+export const deleteJoke = (id) => {
+
+  return fetch(`/api/jokes/${id}`, {
+    method: "DELETE",
+  }).then(
+    response => response.json()
+  );
+
 };

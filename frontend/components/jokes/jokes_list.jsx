@@ -34,7 +34,7 @@ class JokesListItem extends React.Component{
           {this.state.display}
         </h2>
         <h3
-          onClick = {() => this.props.removeJoke(this.props.joke.id)}
+          onClick = {() => this.props.deleteJoke(this.props.joke.id)}
           className='joke-delete'
           >
           Delete

@@ -23,7 +23,7 @@ class Jokes extends React.Component {
               <JokesListItem
                 key = {joke.id}
                 joke = {joke}
-                removeJoke = {this.props.removeJoke}
+                deleteJoke = {this.props.deleteJoke}
                 receiveJoke = {this.props.receiveJoke}
                 />
             ))

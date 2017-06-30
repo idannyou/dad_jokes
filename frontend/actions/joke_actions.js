@@ -39,3 +39,9 @@ export const createJoke = (joke) => dispatch => {
     (joke) => dispatch(receiveJoke(joke))
   );
 };
+
+export const deleteJoke = (id) => dispatch => {
+  return ApiUtil.deleteJoke(id).then(
+    (joke) => dispatch(removeJoke(joke.id))
+  );
+};

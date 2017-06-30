@@ -6,7 +6,8 @@ import {
   receiveJoke,
   removeJoke,
   fetchJokes,
-  createJoke
+  createJoke,
+  deleteJoke
 } from '../../actions/joke_actions';
 
 const mapStateToProps = state => ({
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
   receiveJoke: (joke) => dispatch(receiveJoke(joke)),
   removeJoke: (id) => dispatch(removeJoke(id)),
   fetchJokes: () => dispatch(fetchJokes()),
-  createJoke: (joke) => dispatch(createJoke(joke))
+  createJoke: (joke) => dispatch(createJoke(joke)),
+  deleteJoke: (id) => dispatch(deleteJoke(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jokes);
